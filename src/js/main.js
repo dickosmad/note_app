@@ -1,7 +1,6 @@
 // variables:
 const container = document.getElementById("app");
 const addNoteEl = container.querySelector(".add__note");
-console.log("WORKED -----------");
 
 getNotes().forEach((note) => {
   const noteEl = createNoteElement(note.id, note.content);
@@ -27,9 +26,8 @@ function createNoteElement(id, content) {
     updateNote(id, textArea.value);
   });
   textArea.addEventListener("dblclick", () => {
-    console.log("dbclick");
     let isDelete = confirm("Are you sure you want to delete ?");
-    console.log("Is delete", isDelete);
+
     if (isDelete) {
       console.log("delete");
       deleteNote(id, textArea);
